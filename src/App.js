@@ -17,6 +17,7 @@ const App = () => {
       let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length - 1));
       let chosen = originals[0].items.results[randomChosen];
       let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
+      setFeaturedData(chosenInfo);
     }
     loadAll();
   }, []);
@@ -24,7 +25,7 @@ const App = () => {
   return (
     <div className="page">
       {featuredData &&
-        <FeaturedMovie />
+        <FeaturedMovie item={featuredData} />
       }
 
       <section className="lists">
