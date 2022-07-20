@@ -53,6 +53,12 @@ const App = () => {
           <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
+
+      <footer>
+        Feito com <span role="img" aria-label="coracao">❤️</span> pela B7Web <br />
+        Direitos de imagem para Netflix <br />
+        Dados disponibilizados pelo site Themoviedb.org
+      </footer>
     </div>
   )
 }
