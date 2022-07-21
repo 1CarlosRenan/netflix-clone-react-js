@@ -59,6 +59,12 @@ const App = () => {
         Direitos de imagem para Netflix <br />
         Dados disponibilizados pelo site Themoviedb.org
       </footer>
+
+      {movieList.length <= 0 &&
+        <div className="loading">
+          <img src="https://rchandru.com/images/portfolio/modals/m-loading.gif" alt="Carregando" />
+        </div>
+      }
     </div>
   )
 }
