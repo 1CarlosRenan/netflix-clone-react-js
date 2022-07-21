@@ -8,6 +8,11 @@ const FeaturedMovie = ({ item }) => {
     genres.push(item.genres[i].name);
   }
 
+  let description = item.overview;
+  // if (description.length > 200) {
+  //   description = description.substring(0, 200) + '...'
+  // };
+
   return (
     <section className="featured" style={{
       backgroundSize: 'cover',
@@ -22,7 +27,7 @@ const FeaturedMovie = ({ item }) => {
             <div className="featured--year">{firstDate.getFullYear()}</div>
             <div className="featured--seasons">{item.number_of_seasons} temporada{item.number_of_seasons !== 1 ? 's' : null}</div>
           </div>
-          <div className="featured--description">{item.overview}</div>
+          <div className="featured--description">{description}</div>
           <div className="featured--buttons">
             <a href={`/watch/${item.id}`} className="featured--watch-button">► Assistir</a>
             <a href={`/list/add/${item.id}`} className="featured--mylist-button">+ Minha Lista</a>
